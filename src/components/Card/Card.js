@@ -2,10 +2,16 @@ import React from 'react';
 import styles from './Card.scss';
 import PropTypes from 'prop-types';
 
-const Card = props => (
-  // eslint-disable-next-line react/prop-types
-  <h5 className={styles.component}>{props.title}</h5>
-);
+
+class Card extends React.Component {
+  render() {
+    // eslint-disable-next-line react/prop-types
+    const {title} = this.props;
+    return (
+      <h5 className={styles.component}>{title}</h5>
+    );
+  }
+}
 
 Card.PropTypes = {
   title: PropTypes.string.isRequired,

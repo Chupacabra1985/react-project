@@ -1,12 +1,9 @@
 import {connect} from 'react-redux';
 import SearchResults from './SearchResults';
+import {getSerchedCards} from '../../redux/cardsRedux';
 
-const mapStateToProps = (state, props) => {
-  const searchString = props.match.params.searchString;
-  const cardList = state.cards.filter(card => new RegExp(searchString, 'i').test(card.title));
-  return {
-    cards: cardList,
-  };
-};
+const mapStateToProps = (state, props) => ({
+  cards: getSerchedCards(state, props),
+});
 
 export default connect(mapStateToProps)(SearchResults);

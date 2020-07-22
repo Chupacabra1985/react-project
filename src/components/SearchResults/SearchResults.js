@@ -5,8 +5,8 @@ import Card from '../Card/Card';
 import Container from '../Container/Container';
 
 class SearchResults extends React.Component {
-
   render() {
+    console.log(this.props);
     const {cards} = this.props;
     return (
       <Container>
